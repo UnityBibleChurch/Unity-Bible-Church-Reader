@@ -1,0 +1,96 @@
+🚀 PROJECT CONTEXT: Unity Bible Church 2026 Spiritual Growth Guide
+Project Name: 2026 Spiritual Growth Guide
+Platform: React Web App (Vite + TypeScript)
+Hosting: GitHub Pages
+Development Environment: Garuda Linux (Arch-based)
+Current Stage: January data extraction complete. Feb–Dec pending manual entry.
+
+🛠️ Technical Stack
+Framework: React 18 (Vite)
+
+Language: TypeScript (.tsx)
+
+Styling: Tailwind CSS (Dark/Light mode support)
+
+Icons: Lucide-React
+
+State Management: Local State + LocalStorage (for tracking read chapters)
+
+Data Source: JSON files stored in src/data/ (one per month)
+
+📂 Directory Structure (Planned)
+text
+unity-bible-reader/
+├── public/
+├── src/
+│   ├── components/       # Reusable UI components (ReadingCard, etc.)
+│   ├── data/
+│   │   ├── january.json  # ✅ COMPLETE
+│   │   ├── february.json # ⏳ Pending entry
+│   │   └── ...           # (march.json through december.json)
+│   ├── App.tsx           # Main logic (View switching, Date nav)
+│   ├── main.tsx          # Entry point
+│   └── index.css         # Tailwind directives
+├── tailwind.config.js    # Dark mode configured
+└── package.json
+📋 Setup Instructions (Garuda Linux)
+Run these commands to initialize the environment:
+
+bash
+# 1. Install Node.js & npm
+sudo pacman -S nodejs npm
+
+# 2. Create Project
+mkdir unity-bible-reader && cd unity-bible-reader
+npm create vite@latest .
+# Select: React -> TypeScript
+
+# 3. Install Dependencies
+npm install
+npm install lucide-react
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+# 4. Start Dev Server
+npm run dev
+🤖 Automation Scripts
+generate_months.py (Use this to generate empty JSON templates for Feb-Dec):
+
+python
+import json
+import calendar
+import os
+
+os.makedirs('src/data', exist_ok=True)
+months = ["February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+for i, month_name in enumerate(months):
+    month_num = i + 2
+    days_in_month = calendar.monthrange(2026, month_num)[1]
+    entries = []
+    for day in range(1, days_in_month + 1):
+        # ... (Script logic to generate JSON structure)
+        pass # Full script in history
+📅 Data Format (JSON)
+Each month file follows this structure:
+
+json
+[
+  {
+    "id": "2026-01-01",
+    "month": "January",
+    "day": 1,
+    "dateDisplay": "Thursday, Jan 1",
+    "fullDate": "Thursday, January 1",
+    "ot": { "book": "Genesis", "chapters": "1-2" },
+    "wisdom": { "book": "Psalm", "chapters": "1" },
+    "nt": { "book": "Matthew", "chapters": "1" }
+  }
+]
+Next Immediate Action:
+
+Initialize project on Garuda Linux.
+
+Run the Python generator script.
+
+Manually populate february.json through december.json using the physical booklet images.

@@ -1,0 +1,521 @@
+import React, { useState, useEffect } from 'react';
+import { Calendar, BookOpen, ChevronRight, ExternalLink, Moon, Sun, X, Info, CheckCircle, Share } from 'lucide-react';
+
+// --- DATA: 2026 READING PLAN (January Sample) ---
+const READING_PLAN = [
+  { id: "2026-01-01", month: "January", day: 1, dateDisplay: "Thursday, Jan 1", fullDate: "Thursday, January 1", ot: { book: "Genesis", chapters: "1-2" }, wisdom: { book: "Psalms", chapters: "1" }, nt: { book: "Matthew", chapters: "1" } },
+  { id: "2026-01-02", month: "January", day: 2, dateDisplay: "Friday, Jan 2", fullDate: "Friday, January 2", ot: { book: "Genesis", chapters: "3-4" }, wisdom: { book: "Psalms", chapters: "2" }, nt: { book: "Matthew", chapters: "2" } },
+  { id: "2026-01-03", month: "January", day: 3, dateDisplay: "Saturday, Jan 3", fullDate: "Saturday, January 3", ot: { book: "Genesis", chapters: "5-6" }, wisdom: { book: "Psalms", chapters: "3" }, nt: { book: "Matthew", chapters: "3" } },
+  { id: "2026-01-04", month: "January", day: 4, dateDisplay: "Sunday, Jan 4", fullDate: "Sunday, January 4", ot: { book: "Genesis", chapters: "7-8" }, wisdom: { book: "Psalms", chapters: "4" }, nt: { book: "Matthew", chapters: "4" } },
+  { id: "2026-01-05", month: "January", day: 5, dateDisplay: "Monday, Jan 5", fullDate: "Monday, January 5", ot: { book: "Genesis", chapters: "9-10" }, wisdom: { book: "Psalms", chapters: "5" }, nt: { book: "Matthew", chapters: "5" } },
+  { id: "2026-01-06", month: "January", day: 6, dateDisplay: "Tuesday, Jan 6", fullDate: "Tuesday, January 6", ot: { book: "Genesis", chapters: "11-12" }, wisdom: { book: "Psalms", chapters: "6" }, nt: { book: "Matthew", chapters: "6" } },
+  { id: "2026-01-07", month: "January", day: 7, dateDisplay: "Wednesday, Jan 7", fullDate: "Wednesday, January 7", ot: { book: "Genesis", chapters: "13-15" }, wisdom: { book: "Psalms", chapters: "7" }, nt: { book: "Matthew", chapters: "7" } },
+  { id: "2026-01-08", month: "January", day: 8, dateDisplay: "Thursday, Jan 8", fullDate: "Thursday, January 8", ot: { book: "Genesis", chapters: "16-17" }, wisdom: { book: "Psalms", chapters: "8" }, nt: { book: "Matthew", chapters: "8" } },
+  { id: "2026-01-09", month: "January", day: 9, dateDisplay: "Friday, Jan 9", fullDate: "Friday, January 9", ot: { book: "Genesis", chapters: "18-19" }, wisdom: { book: "Psalms", chapters: "9" }, nt: { book: "Matthew", chapters: "9" } },
+  { id: "2026-01-10", month: "January", day: 10, dateDisplay: "Saturday, Jan 10", fullDate: "Saturday, January 10", ot: { book: "Genesis", chapters: "20-21" }, wisdom: { book: "Psalms", chapters: "10" }, nt: { book: "Matthew", chapters: "10" } },
+  { id: "2026-01-11", month: "January", day: 11, dateDisplay: "Sunday, Jan 11", fullDate: "Sunday, January 11", ot: { book: "Genesis", chapters: "22-23" }, wisdom: { book: "Psalms", chapters: "11" }, nt: { book: "Matthew", chapters: "11" } },
+  { id: "2026-01-12", month: "January", day: 12, dateDisplay: "Monday, Jan 12", fullDate: "Monday, January 12", ot: { book: "Genesis", chapters: "24" }, wisdom: { book: "Psalms", chapters: "12" }, nt: { book: "Matthew", chapters: "12" } },
+  { id: "2026-01-13", month: "January", day: 13, dateDisplay: "Tuesday, Jan 13", fullDate: "Tuesday, January 13", ot: { book: "Genesis", chapters: "25-26" }, wisdom: { book: "Psalms", chapters: "13" }, nt: { book: "Matthew", chapters: "13" } },
+  { id: "2026-01-14", month: "January", day: 14, dateDisplay: "Wednesday, Jan 14", fullDate: "Wednesday, January 14", ot: { book: "Genesis", chapters: "27-28" }, wisdom: { book: "Psalms", chapters: "14" }, nt: { book: "Matthew", chapters: "14" } },
+  { id: "2026-01-15", month: "January", day: 15, dateDisplay: "Thursday, Jan 15", fullDate: "Thursday, January 15", ot: { book: "Genesis", chapters: "29-30" }, wisdom: { book: "Psalms", chapters: "15" }, nt: { book: "Matthew", chapters: "15" } },
+  { id: "2026-01-16", month: "January", day: 16, dateDisplay: "Friday, Jan 16", fullDate: "Friday, January 16", ot: { book: "Genesis", chapters: "31-32" }, wisdom: { book: "Psalms", chapters: "16" }, nt: { book: "Matthew", chapters: "16" } },
+  { id: "2026-01-17", month: "January", day: 17, dateDisplay: "Saturday, Jan 17", fullDate: "Saturday, January 17", ot: { book: "Genesis", chapters: "33-35" }, wisdom: { book: "Psalms", chapters: "17" }, nt: { book: "Matthew", chapters: "17" } },
+  { id: "2026-01-18", month: "January", day: 18, dateDisplay: "Sunday, Jan 18", fullDate: "Sunday, January 18", ot: { book: "Genesis", chapters: "36-37" }, wisdom: { book: "Psalms", chapters: "18" }, nt: { book: "Matthew", chapters: "18" } },
+  { id: "2026-01-19", month: "January", day: 19, dateDisplay: "Monday, Jan 19", fullDate: "Monday, January 19", ot: { book: "Genesis", chapters: "38-40" }, wisdom: { book: "Psalms", chapters: "19" }, nt: { book: "Matthew", chapters: "19" } },
+  { id: "2026-01-20", month: "January", day: 20, dateDisplay: "Tuesday, Jan 20", fullDate: "Tuesday, January 20", ot: { book: "Genesis", chapters: "41" }, wisdom: { book: "Psalms", chapters: "20" }, nt: { book: "Matthew", chapters: "20" } },
+  { id: "2026-01-21", month: "January", day: 21, dateDisplay: "Wednesday, Jan 21", fullDate: "Wednesday, January 21", ot: { book: "Genesis", chapters: "42-43" }, wisdom: { book: "Psalms", chapters: "21" }, nt: { book: "Matthew", chapters: "21" } },
+  { id: "2026-01-22", month: "January", day: 22, dateDisplay: "Thursday, Jan 22", fullDate: "Thursday, January 22", ot: { book: "Genesis", chapters: "44-45" }, wisdom: { book: "Psalms", chapters: "22" }, nt: { book: "Matthew", chapters: "22" } },
+  { id: "2026-01-23", month: "January", day: 23, dateDisplay: "Friday, Jan 23", fullDate: "Friday, January 23", ot: { book: "Genesis", chapters: "46-48" }, wisdom: { book: "Psalms", chapters: "23" }, nt: { book: "Matthew", chapters: "23" } },
+  { id: "2026-01-24", month: "January", day: 24, dateDisplay: "Saturday, Jan 24", fullDate: "Saturday, January 24", ot: { book: "Genesis", chapters: "49-50" }, wisdom: { book: "Psalms", chapters: "24" }, nt: { book: "Matthew", chapters: "24" } },
+  { id: "2026-01-25", month: "January", day: 25, dateDisplay: "Sunday, Jan 25", fullDate: "Sunday, January 25", ot: { book: "Exodus", chapters: "1-3" }, wisdom: { book: "Psalms", chapters: "25" }, nt: { book: "Matthew", chapters: "25" } },
+  { id: "2026-01-26", month: "January", day: 26, dateDisplay: "Monday, Jan 26", fullDate: "Monday, January 26", ot: { book: "Exodus", chapters: "4-6" }, wisdom: { book: "Psalms", chapters: "26" }, nt: { book: "Matthew", chapters: "26" } },
+  { id: "2026-01-27", month: "January", day: 27, dateDisplay: "Tuesday, Jan 27", fullDate: "Tuesday, January 27", ot: { book: "Exodus", chapters: "7-9" }, wisdom: { book: "Psalms", chapters: "27" }, nt: { book: "Matthew", chapters: "27" } },
+  { id: "2026-01-28", month: "January", day: 28, dateDisplay: "Wednesday, Jan 28", fullDate: "Wednesday, January 28", ot: { book: "Exodus", chapters: "10-12" }, wisdom: { book: "Psalms", chapters: "28" }, nt: { book: "Matthew", chapters: "28" } },
+  { id: "2026-01-29", month: "January", day: 29, dateDisplay: "Thursday, Jan 29", fullDate: "Thursday, January 29", ot: { book: "Exodus", chapters: "13-15" }, wisdom: { book: "Psalms", chapters: "29" }, nt: { book: "Matthew", chapters: "29" } },
+  { id: "2026-01-30", month: "January", day: 30, dateDisplay: "Friday, Jan 30", fullDate: "Friday, January 30", ot: { book: "Exodus", chapters: "16-18" }, wisdom: { book: "Psalms", chapters: "30" }, nt: { book: "Mark", chapters: "1" } },
+  { id: "2026-01-31", month: "January", day: 31, dateDisplay: "Saturday, Jan 31", fullDate: "Saturday, January 31", ot: { book: "Exodus", chapters: "19-20" }, wisdom: { book: "Psalms", chapters: "31" }, nt: { book: "Mark", chapters: "2" } },
+];
+
+const LSB_URL_BUILDER = (book, chap) => `https://read.lsbible.org/?q=${book}+${chap}`;
+
+const parseChapters = (chapterStr) => {
+  if (!chapterStr) return [];
+  const chapters = [];
+  const parts = chapterStr.toString().split(',');
+  parts.forEach(part => {
+    part = part.trim();
+    if (part.includes('-')) {
+      const [start, end] = part.split('-').map(Number);
+      for (let i = start; i <= end; i++) {
+        chapters.push(i);
+      }
+    } else {
+      chapters.push(Number(part));
+    }
+  });
+  return chapters;
+};
+
+// --- COMPONENT: Single Reading Card ---
+const ReadingCard = ({ title, reading, onChapterSelect, selectedChapter, onMarkRead, completedChapters, id }) => {
+  if (!reading || !reading.book) return null;
+  const chapters = parseChapters(reading.chapters);
+
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 overflow-hidden mb-4 md:mb-0 transition-all duration-200 flex flex-col h-full hover:shadow-md dark:hover:border-slate-600">
+      <div className="bg-slate-50/50 dark:bg-slate-900/30 px-3 py-2 border-b border-slate-100 dark:border-slate-700/50 flex flex-col gap-1 items-start">
+        <h3 className="text-[10px] uppercase tracking-widest font-bold text-slate-400 dark:text-slate-500">{title}</h3>
+        <span className="text-xs font-semibold text-slate-700 dark:text-slate-200 w-full truncate">
+          {reading.book} <span className="text-slate-400 dark:text-slate-500 font-normal">Ch {reading.chapters}</span>
+        </span>
+      </div>
+      <div className="p-3 flex-grow bg-white dark:bg-slate-800">
+        <div className="flex flex-col gap-1.5">
+          {chapters.map(chap => {
+            const isSelected = selectedChapter && selectedChapter.book === reading.book && selectedChapter.chapter === chap;
+            const uniqueId = `${id}-${reading.book}-${chap}`;
+            const isCompleted = completedChapters.includes(uniqueId);
+
+            return (
+              <div key={chap} className="flex items-center gap-2">
+                 <button
+                   onClick={() => onMarkRead(uniqueId)}
+                   className={`
+                     flex-shrink-0 w-5 h-5 rounded-full border flex items-center justify-center transition-colors
+                     ${isCompleted
+                        ? 'bg-green-500 border-green-500 text-white'
+                        : 'bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 hover:border-green-400'
+                     }
+                   `}
+                   title="Mark as Read"
+                 >
+                   {isCompleted && <CheckCircle className="w-3.5 h-3.5" />}
+                 </button>
+
+                 <button
+                   onClick={() => onChapterSelect(reading.book, chap)}
+                   className={`
+                     flex-grow py-1.5 px-3 rounded-md text-xs font-medium transition-all text-center border
+                     ${isSelected
+                       ? 'bg-indigo-600 border-indigo-600 text-white shadow-sm'
+                       : isCompleted
+                         ? 'bg-slate-50 dark:bg-slate-800 border-slate-100 dark:border-slate-700 text-slate-400 dark:text-slate-500 line-through decoration-slate-400'
+                         : 'bg-white dark:bg-slate-800/50 border-slate-100 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-indigo-200 dark:hover:border-indigo-900 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50/50 dark:hover:bg-slate-700'}
+                   `}
+                 >
+                   Chapter {chap}
+                 </button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- COMPONENT: Theme Toggle Switch ---
+const ThemeToggle = ({ darkMode, toggleDarkMode }) => {
+  return (
+    <button
+      onClick={toggleDarkMode}
+      className={`
+        relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75
+        ${darkMode ? 'bg-indigo-600' : 'bg-slate-200'}
+      `}
+      title="Toggle Dark Mode"
+    >
+      <span className="sr-only">Toggle dark mode</span>
+      <span
+        aria-hidden="true"
+        className={`
+          pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out flex items-center justify-center
+          ${darkMode ? 'translate-x-5' : 'translate-x-0'}
+        `}
+      >
+        {darkMode ? (
+          <Moon className="w-3 h-3 text-indigo-600" />
+        ) : (
+          <Sun className="w-3 h-3 text-orange-400" />
+        )}
+      </span>
+    </button>
+  );
+};
+
+// --- MAIN APP ---
+export default function App() {
+  const [currentDateIndex, setCurrentDateIndex] = useState(0);
+  const [view, setView] = useState('daily');
+  const [activeReading, setActiveReading] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+
+  // New States
+  const [showAbout, setShowAbout] = useState(false);
+  const [completedChapters, setCompletedChapters] = useState([]);
+  const [showInstallTip, setShowInstallTip] = useState(false);
+
+  // Initialize State
+  useEffect(() => {
+    // 1. Check local storage for Theme
+    const savedTheme = localStorage.getItem('unity_bible_theme');
+    if (savedTheme) {
+      setDarkMode(savedTheme === 'dark');
+    } else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setDarkMode(true);
+      }
+    }
+
+    // 2. Check local storage for Progress
+    const savedProgress = localStorage.getItem('unity_bible_progress');
+    if (savedProgress) {
+      setCompletedChapters(JSON.parse(savedProgress));
+    }
+
+    // 3. Check for Install Tip (First Visit)
+    const hasSeenTip = localStorage.getItem('unity_bible_install_tip');
+    if (!hasSeenTip) {
+      setTimeout(() => setShowInstallTip(true), 2000); // Show after 2s
+    }
+
+    // 4. Set Date
+    const today = new Date();
+    const isoDate = today.toISOString().split('T')[0];
+    const todayIndex = READING_PLAN.findIndex(d => d.id === isoDate);
+
+    if (todayIndex !== -1) {
+      setCurrentDateIndex(todayIndex);
+    } else {
+      setCurrentDateIndex(0);
+    }
+  }, []);
+
+  // Toggle Dark Mode
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('unity_bible_theme', newMode ? 'dark' : 'light');
+  };
+
+  // Toggle Read Status
+  const toggleChapterRead = (uniqueId) => {
+    let newCompleted;
+    if (completedChapters.includes(uniqueId)) {
+      newCompleted = completedChapters.filter(id => id !== uniqueId);
+    } else {
+      newCompleted = [...completedChapters, uniqueId];
+    }
+    setCompletedChapters(newCompleted);
+    localStorage.setItem('unity_bible_progress', JSON.stringify(newCompleted));
+  };
+
+  // Dismiss Install Tip
+  const dismissInstallTip = () => {
+    setShowInstallTip(false);
+    localStorage.setItem('unity_bible_install_tip', 'true');
+  };
+
+  const handleChapterSelect = (book, chapter) => {
+    setActiveReading({ book, chapter });
+  };
+
+  const currentPlan = READING_PLAN[currentDateIndex];
+
+  const getUrl = () => {
+    if (!activeReading) return '';
+    return LSB_URL_BUILDER(activeReading.book, activeReading.chapter);
+  };
+
+  return (
+    // Outer wrapper handles the 'dark' class for Tailwind
+    <div className={darkMode ? 'dark' : ''}>
+      <div className="min-h-screen bg-[#f8fafc] dark:bg-[#0f172a] font-sans text-slate-800 dark:text-slate-100 transition-colors duration-200 flex flex-col relative">
+
+        {/* HEADER */}
+        <header className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm sticky top-0 z-10 border-b border-slate-200/50 dark:border-slate-800 transition-colors duration-200">
+          <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+
+            {/* LEFT: Logo & Brand */}
+            <div className="flex items-center gap-3">
+               <div className="flex-shrink-0">
+                 {!logoError ? (
+                   <img
+                     src="https://www.google.com/s2/favicons?domain=unitybible.com&sz=128"
+                     alt="Unity Bible Church"
+                     className="w-10 h-10 object-contain rounded-full shadow-sm bg-white"
+                     onError={() => setLogoError(true)}
+                   />
+                 ) : (
+                    <div className="bg-indigo-600 p-2 rounded-lg shadow-sm">
+                      <BookOpen className="w-6 h-6 text-white" />
+                    </div>
+                 )}
+               </div>
+               <div className="flex flex-col">
+                  <span className="font-bold text-slate-800 dark:text-white leading-tight text-sm md:text-base">Unity Bible Church</span>
+                  <div className="flex items-center gap-2 mt-1">
+                     <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                  </div>
+               </div>
+            </div>
+
+            {/* CENTER: Title */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex flex-col items-center">
+               <h1 className="text-base font-bold text-slate-800 dark:text-white text-center">
+                  2026 Spiritual Growth Guide
+               </h1>
+               <span className="text-sm font-bold text-slate-500 dark:text-slate-400 mt-0.5">
+                  Legacy Standard Bible
+               </span>
+            </div>
+
+            {/* RIGHT: Controls */}
+            <div className="flex items-center gap-2 md:gap-3">
+                 <button
+                  onClick={() => setView(view === 'daily' ? 'calendar' : 'daily')}
+                  className="flex items-center gap-2 px-3 py-1.5 text-slate-500 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors bg-slate-50 hover:bg-indigo-50 dark:bg-slate-800 dark:hover:bg-slate-700/50 rounded-full border border-slate-100 dark:border-slate-700"
+                  title="Change Date"
+                 >
+                  <Calendar className="w-4 h-4" />
+                  <span className="text-xs font-semibold hidden sm:inline">Change Date</span>
+                 </button>
+
+                 <button
+                  onClick={() => setShowAbout(true)}
+                  className="p-2 text-slate-400 hover:text-indigo-600 dark:text-slate-500 dark:hover:text-indigo-400 transition-colors bg-transparent rounded-full hover:bg-slate-50 dark:hover:bg-slate-800"
+                  title="About"
+                 >
+                  <Info className="w-5 h-5" />
+                 </button>
+            </div>
+
+          </div>
+
+          {/* Mobile Title */}
+          <div className="md:hidden pb-2 text-center border-t border-slate-100 dark:border-slate-800 pt-2 mt-1">
+             <h1 className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                2026 Spiritual Growth Guide
+             </h1>
+             <p className="text-xs font-bold text-slate-500 dark:text-slate-400 mt-0.5">
+                Legacy Standard Bible
+             </p>
+          </div>
+        </header>
+
+        <main className="max-w-5xl mx-auto px-4 py-6 pb-24 w-full">
+
+          {view === 'calendar' ? (
+            // CALENDAR VIEW
+            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-slate-200 dark:border-slate-700 transition-colors duration-200">
+               <div className="p-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 sticky top-0 flex justify-between items-center">
+                 <h2 className="font-bold text-slate-700 dark:text-slate-200">Reading Schedule</h2>
+                 <button
+                   onClick={() => setView('daily')}
+                   className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400"
+                 >
+                   Back to Daily View
+                 </button>
+               </div>
+               <div className="divide-y divide-slate-100 dark:divide-slate-700 max-h-[75vh] overflow-y-auto">
+                 {READING_PLAN.map((day, idx) => (
+                   <button
+                     key={day.id}
+                     onClick={() => {
+                       setCurrentDateIndex(idx);
+                       setView('daily');
+                       setActiveReading(null);
+                     }}
+                     className={`w-full text-left px-4 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors ${
+                       idx === currentDateIndex
+                         ? 'bg-indigo-50 dark:bg-indigo-900/20 border-l-4 border-indigo-500 pl-3'
+                         : 'pl-4'
+                     }`}
+                   >
+                     <div>
+                       <div className="font-medium text-slate-800 dark:text-slate-200">{day.dateDisplay}</div>
+                       <div className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                          {day.ot.book} {day.ot.chapters} • {day.wisdom.book} {day.wisdom.chapters} • {day.nt.book} {day.nt.chapters}
+                       </div>
+                     </div>
+                     <ChevronRight className="w-4 h-4 text-slate-300 dark:text-slate-600" />
+                   </button>
+                 ))}
+               </div>
+            </div>
+          ) : (
+            // DAILY VIEW
+            <div className="space-y-6">
+
+              {/* Date Navigation & Verse Header */}
+              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 transition-colors duration-200 flex justify-center">
+
+                <div className="text-center flex flex-col gap-2 max-w-lg w-full">
+                  {/* VERSE - The "Pop" Element */}
+                  <div className="text-amber-600 dark:text-amber-400 font-serif italic text-base md:text-xl leading-relaxed font-semibold">
+                    "Your word is a lamp to my feet<br className="hidden sm:inline" /> And a light to my path."
+                  </div>
+                  <div className="text-xs font-bold text-amber-700/70 dark:text-amber-500/70 uppercase tracking-widest mt-1">
+                     Psalm 119:105
+                  </div>
+
+                  {/* DATE - Underneath */}
+                  <div className="mt-2 pt-3 border-t border-slate-100 dark:border-slate-700/50">
+                     <div className="text-lg font-bold text-slate-800 dark:text-slate-200 tracking-tight">
+                        {currentPlan.fullDate || currentPlan.dateDisplay}
+                     </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reading Cards - GRID LAYOUT */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <ReadingCard
+                  title="Old Testament"
+                  reading={currentPlan.ot}
+                  onChapterSelect={handleChapterSelect}
+                  selectedChapter={activeReading}
+                  onMarkRead={toggleChapterRead}
+                  completedChapters={completedChapters}
+                  id={currentPlan.id}
+                />
+                <ReadingCard
+                  title="Wisdom"
+                  reading={currentPlan.wisdom}
+                  onChapterSelect={handleChapterSelect}
+                  selectedChapter={activeReading}
+                  onMarkRead={toggleChapterRead}
+                  completedChapters={completedChapters}
+                  id={currentPlan.id}
+                />
+                <ReadingCard
+                  title="New Testament"
+                  reading={currentPlan.nt}
+                  onChapterSelect={handleChapterSelect}
+                  selectedChapter={activeReading}
+                  onMarkRead={toggleChapterRead}
+                  completedChapters={completedChapters}
+                  id={currentPlan.id}
+                />
+              </div>
+
+              {/* Embed/Link Area */}
+              {activeReading && (
+                <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-800 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] dark:shadow-[0_-8px_30px_rgba(0,0,0,0.5)] rounded-t-2xl z-20 border-t border-slate-100 dark:border-slate-700 animate-in slide-in-from-bottom duration-300 transition-colors">
+                  <div className="max-w-5xl mx-auto">
+                    <div className="p-3 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between bg-slate-50/80 dark:bg-slate-900/50 backdrop-blur rounded-t-2xl">
+                      <div className="flex items-center gap-2">
+                         <span className="font-bold text-indigo-700 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/50 px-3 py-1 rounded-full text-xs">
+                           {activeReading.book} {activeReading.chapter}
+                         </span>
+                         {/* Small External Link Icon */}
+                         <a
+                          href={getUrl()}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center p-1.5 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 bg-transparent rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/30 transition-colors"
+                          title="Open in new tab"
+                        >
+                           <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
+
+                      {/* Big Prominent Go Back Button */}
+                      <button
+                        onClick={() => setActiveReading(null)}
+                        className="flex items-center gap-1.5 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 px-4 py-2 rounded-lg font-bold text-sm transition-colors"
+                      >
+                        <span>Go Back</span>
+                        <X className="w-5 h-5" />
+                      </button>
+                    </div>
+
+                    {/* Iframe Area - Height adjusts based on screen */}
+                    <div className="h-[60vh] md:h-[500px] w-full bg-white dark:bg-slate-900 relative">
+                       <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-sm pointer-events-none">
+                          <div className="text-center p-6">
+                            <p className="mb-2">Loading Legacy Standard Bible...</p>
+                          </div>
+                       </div>
+                       <iframe
+                         src={getUrl()}
+                         title="Bible Reader"
+                         className="w-full h-full relative z-10 border-0"
+                         sandbox="allow-scripts allow-same-origin allow-popups"
+                       />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* ABOUT MODAL */}
+          {showAbout && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-in fade-in duration-200">
+               <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl w-full max-w-sm overflow-hidden animate-in zoom-in-95 duration-200">
+                  <div className="p-4 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+                     <h3 className="font-bold text-slate-800 dark:text-white">About Unity Bible Church</h3>
+                     <button onClick={() => setShowAbout(false)} className="p-1 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400">
+                        <X className="w-5 h-5" />
+                     </button>
+                  </div>
+                  <div className="p-6 text-center space-y-4">
+                     <div>
+                        <div className="bg-indigo-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-md">
+                           <BookOpen className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                           "Desire to see God glorified through our worship of Him, building up believers and sharing the Good News of Christ."
+                        </p>
+                     </div>
+
+                     <div className="space-y-2 py-2 border-t border-b border-slate-100 dark:border-slate-700/50">
+                        <div className="text-sm">
+                           <span className="block text-xs font-bold uppercase text-slate-400 dark:text-slate-500 tracking-wider">Address</span>
+                           <span className="text-slate-800 dark:text-slate-200 font-medium">541 College St. Lewiston, ME 04240</span>
+                        </div>
+                        <div className="text-sm">
+                           <span className="block text-xs font-bold uppercase text-slate-400 dark:text-slate-500 tracking-wider">Sunday Services</span>
+                           <span className="text-slate-800 dark:text-slate-200 font-medium">Sunday School 9am • Worship 10am</span>
+                        </div>
+                     </div>
+
+                     <a
+                       href="https://www.unitybible.com"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="flex items-center justify-center gap-2 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-xl transition-colors"
+                     >
+                        Visit Website <ExternalLink className="w-4 h-4" />
+                     </a>
+                  </div>
+               </div>
+            </div>
+          )}
+
+          {/* INSTALL TIP (First Visit) */}
+          {showInstallTip && (
+             <div className="fixed bottom-6 right-4 left-4 md:left-auto md:w-80 bg-slate-800 dark:bg-slate-700 text-white p-3 rounded-xl shadow-2xl z-50 animate-in slide-in-from-bottom duration-500 mb-2">
+                <div className="flex justify-between items-start gap-3">
+                   <div>
+                      <h4 className="font-bold text-sm mb-1 flex items-center gap-1">
+                         <Share className="w-4 h-4" /> Install App
+                      </h4>
+                      <p className="text-xs text-slate-300 leading-relaxed">
+                         Tap your browser's <strong>Share</strong> button and select <strong>"Add to Home Screen"</strong> for easier access next time!
+                      </p>
+                   </div>
+                   <button onClick={dismissInstallTip} className="text-slate-400 hover:text-white">
+                      <X className="w-4 h-4" />
+                   </button>
+                </div>
+             </div>
+          )}
+
+        </main>
+      </div>
+    </div>
+  );
+}
