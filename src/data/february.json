@@ -1,0 +1,286 @@
+[
+  {
+    "id": "2026-02-01",
+    "month": "February",
+    "day": 1,
+    "dateDisplay": "Sunday, Feb 1",
+    "fullDate": "Sunday, February 1",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-02-02",
+    "month": "February",
+    "day": 2,
+    "dateDisplay": "Monday, Feb 2",
+    "fullDate": "Monday, February 2",
+    "ot": { "book": "Exodus", "chapters": "37-38" },
+    "wisdom": { "book": "Psalm", "chapters": "32" },
+    "nt": { "book": "Matthew", "chapters": "28" }
+  },
+  {
+    "id": "2026-02-03",
+    "month": "February",
+    "day": 3,
+    "dateDisplay": "Tuesday, Feb 3",
+    "fullDate": "Tuesday, February 3",
+    "ot": { "book": "Exodus", "chapters": "39-40" },
+    "wisdom": { "book": "Proverbs", "chapters": "4" },
+    "nt": { "book": "Mark", "chapters": "1" }
+  },
+  {
+    "id": "2026-02-04",
+    "month": "February",
+    "day": 4,
+    "dateDisplay": "Wednesday, Feb 4",
+    "fullDate": "Wednesday, February 4",
+    "ot": { "book": "Leviticus", "chapters": "1-3" },
+    "wisdom": { "book": "Psalm", "chapters": "33" },
+    "nt": { "book": "Mark", "chapters": "2" }
+  },
+  {
+    "id": "2026-02-05",
+    "month": "February",
+    "day": 5,
+    "dateDisplay": "Thursday, Feb 5",
+    "fullDate": "Thursday, February 5",
+    "ot": { "book": "Leviticus", "chapters": "4-5" },
+    "wisdom": { "book": "Psalm", "chapters": "34" },
+    "nt": { "book": "Mark", "chapters": "3" }
+  },
+  {
+    "id": "2026-02-06",
+    "month": "February",
+    "day": 6,
+    "dateDisplay": "Friday, Feb 6",
+    "fullDate": "Friday, February 6",
+    "ot": { "book": "Leviticus", "chapters": "6-7" },
+    "wisdom": { "book": "Psalm", "chapters": "35" },
+    "nt": { "book": "Mark", "chapters": "4" }
+  },
+  {
+    "id": "2026-02-07",
+    "month": "February",
+    "day": 7,
+    "dateDisplay": "Saturday, Feb 7",
+    "fullDate": "Saturday, February 7",
+    "ot": { "book": "Leviticus", "chapters": "8-9" },
+    "wisdom": { "book": "Psalm", "chapters": "36" },
+    "nt": { "book": "Mark", "chapters": "5" }
+  },
+  {
+    "id": "2026-02-08",
+    "month": "February",
+    "day": 8,
+    "dateDisplay": "Sunday, Feb 8",
+    "fullDate": "Sunday, February 8",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-02-09",
+    "month": "February",
+    "day": 9,
+    "dateDisplay": "Monday, Feb 9",
+    "fullDate": "Monday, February 9",
+    "ot": { "book": "Leviticus", "chapters": "12-13" },
+    "wisdom": { "book": "Proverbs", "chapters": "5" },
+    "nt": { "book": "Mark", "chapters": "7" }
+  },
+  {
+    "id": "2026-02-10",
+    "month": "February",
+    "day": 10,
+    "dateDisplay": "Tuesday, Feb 10",
+    "fullDate": "Tuesday, February 10",
+    "ot": { "book": "Leviticus", "chapters": "14" },
+    "wisdom": { "book": "Psalm", "chapters": "38" },
+    "nt": { "book": "Mark", "chapters": "8" }
+  },
+  {
+    "id": "2026-02-11",
+    "month": "February",
+    "day": 11,
+    "dateDisplay": "Wednesday, Feb 11",
+    "fullDate": "Wednesday, February 11",
+    "ot": { "book": "Leviticus", "chapters": "15-16" },
+    "wisdom": { "book": "Psalm", "chapters": "39" },
+    "nt": { "book": "Mark", "chapters": "9" }
+  },
+  {
+    "id": "2026-02-12",
+    "month": "February",
+    "day": 12,
+    "dateDisplay": "Thursday, Feb 12",
+    "fullDate": "Thursday, February 12",
+    "ot": { "book": "Leviticus", "chapters": "17-18" },
+    "wisdom": { "book": "Psalm", "chapters": "40" },
+    "nt": { "book": "Mark", "chapters": "10" }
+  },
+  {
+    "id": "2026-02-13",
+    "month": "February",
+    "day": 13,
+    "dateDisplay": "Friday, Feb 13",
+    "fullDate": "Friday, February 13",
+    "ot": { "book": "Leviticus", "chapters": "19-20" },
+    "wisdom": { "book": "Psalm", "chapters": "41" },
+    "nt": { "book": "Mark", "chapters": "11" }
+  },
+  {
+    "id": "2026-02-14",
+    "month": "February",
+    "day": 14,
+    "dateDisplay": "Saturday, Feb 14",
+    "fullDate": "Saturday, February 14",
+    "ot": { "book": "Leviticus", "chapters": "21-22" },
+    "wisdom": { "book": "Psalm", "chapters": "42" },
+    "nt": { "book": "Mark", "chapters": "12" }
+  },
+  {
+    "id": "2026-02-15",
+    "month": "February",
+    "day": 15,
+    "dateDisplay": "Sunday, Feb 15",
+    "fullDate": "Sunday, February 15",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-02-16",
+    "month": "February",
+    "day": 16,
+    "dateDisplay": "Monday, Feb 16",
+    "fullDate": "Monday, February 16",
+    "ot": { "book": "Leviticus", "chapters": "25" },
+    "wisdom": { "book": "Psalm", "chapters": "44" },
+    "nt": { "book": "Mark", "chapters": "14" }
+  },
+  {
+    "id": "2026-02-17",
+    "month": "February",
+    "day": 17,
+    "dateDisplay": "Tuesday, Feb 17",
+    "fullDate": "Tuesday, February 17",
+    "ot": { "book": "Leviticus", "chapters": "26-27" },
+    "wisdom": { "book": "Psalm", "chapters": "45" },
+    "nt": { "book": "Mark", "chapters": "15" }
+  },
+  {
+    "id": "2026-02-18",
+    "month": "February",
+    "day": 18,
+    "dateDisplay": "Wednesday, Feb 18",
+    "fullDate": "Wednesday, February 18",
+    "ot": { "book": "Numbers", "chapters": "1-2" },
+    "wisdom": { "book": "Proverbs", "chapters": "6" },
+    "nt": { "book": "Mark", "chapters": "16" }
+  },
+  {
+    "id": "2026-02-19",
+    "month": "February",
+    "day": 19,
+    "dateDisplay": "Thursday, Feb 19",
+    "fullDate": "Thursday, February 19",
+    "ot": { "book": "Numbers", "chapters": "3-4" },
+    "wisdom": { "book": "Psalm", "chapters": "46" },
+    "nt": { "book": "Luke", "chapters": "1" }
+  },
+  {
+    "id": "2026-02-20",
+    "month": "February",
+    "day": 20,
+    "dateDisplay": "Friday, Feb 20",
+    "fullDate": "Friday, February 20",
+    "ot": { "book": "Numbers", "chapters": "5-6" },
+    "wisdom": { "book": "Psalm", "chapters": "47" },
+    "nt": { "book": "Luke", "chapters": "2" }
+  },
+  {
+    "id": "2026-02-21",
+    "month": "February",
+    "day": 21,
+    "dateDisplay": "Saturday, Feb 21",
+    "fullDate": "Saturday, February 21",
+    "ot": { "book": "Numbers", "chapters": "7-8" },
+    "wisdom": { "book": "Psalm", "chapters": "48" },
+    "nt": { "book": "Luke", "chapters": "3" }
+  },
+  {
+    "id": "2026-02-22",
+    "month": "February",
+    "day": 22,
+    "dateDisplay": "Sunday, Feb 22",
+    "fullDate": "Sunday, February 22",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-02-23",
+    "month": "February",
+    "day": 23,
+    "dateDisplay": "Monday, Feb 23",
+    "fullDate": "Monday, February 23",
+    "ot": { "book": "Numbers", "chapters": "12-14" },
+    "wisdom": { "book": "Psalm", "chapters": "50" },
+    "nt": { "book": "Luke", "chapters": "5" }
+  },
+  {
+    "id": "2026-02-24",
+    "month": "February",
+    "day": 24,
+    "dateDisplay": "Tuesday, Feb 24",
+    "fullDate": "Tuesday, February 24",
+    "ot": { "book": "Numbers", "chapters": "15-16" },
+    "wisdom": { "book": "Psalm", "chapters": "51" },
+    "nt": { "book": "Luke", "chapters": "6" }
+  },
+  {
+    "id": "2026-02-25",
+    "month": "February",
+    "day": 25,
+    "dateDisplay": "Wednesday, Feb 25",
+    "fullDate": "Wednesday, February 25",
+    "ot": { "book": "Numbers", "chapters": "17-18" },
+    "wisdom": { "book": "Psalm", "chapters": "52" },
+    "nt": { "book": "Luke", "chapters": "7" }
+  },
+  {
+    "id": "2026-02-26",
+    "month": "February",
+    "day": 26,
+    "dateDisplay": "Thursday, Feb 26",
+    "fullDate": "Thursday, February 26",
+    "ot": { "book": "Numbers", "chapters": "19-20" },
+    "wisdom": { "book": "Psalm", "chapters": "53" },
+    "nt": { "book": "Luke", "chapters": "8" }
+  },
+  {
+    "id": "2026-02-27",
+    "month": "February",
+    "day": 27,
+    "dateDisplay": "Friday, Feb 27",
+    "fullDate": "Friday, February 27",
+    "ot": { "book": "Numbers", "chapters": "21-22" },
+    "wisdom": { "book": "Proverbs", "chapters": "7" },
+    "nt": { "book": "Luke", "chapters": "9" }
+  },
+  {
+    "id": "2026-02-28",
+    "month": "February",
+    "day": 28,
+    "dateDisplay": "Saturday, Feb 28",
+    "fullDate": "Saturday, February 28",
+    "ot": { "book": "Numbers", "chapters": "23-24" },
+    "wisdom": { "book": "Psalm", "chapters": "54" },
+    "nt": { "book": "Luke", "chapters": "10" }
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "2026-03-01",
+    "month": "March",
+    "day": 1,
+    "dateDisplay": "Sunday, Mar 1",
+    "fullDate": "Sunday, March 1",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-03-02",
+    "month": "March",
+    "day": 2,
+    "dateDisplay": "Monday, Mar 2",
+    "fullDate": "Monday, March 2",
+    "ot": { "book": "Numbers", "chapters": "27-28" },
+    "wisdom": { "book": "Psalm", "chapters": "56" },
+    "nt": { "book": "Luke", "chapters": "12" }
+  },
+  {
+    "id": "2026-03-03",
+    "month": "March",
+    "day": 3,
+    "dateDisplay": "Tuesday, Mar 3",
+    "fullDate": "Tuesday, March 3",
+    "ot": { "book": "Numbers", "chapters": "29-30" },
+    "wisdom": { "book": "Psalm", "chapters": "57" },
+    "nt": { "book": "Luke", "chapters": "13" }
+  },
+  {
+    "id": "2026-03-04",
+    "month": "March",
+    "day": 4,
+    "dateDisplay": "Wednesday, Mar 4",
+    "fullDate": "Wednesday, March 4",
+    "ot": { "book": "Numbers", "chapters": "31-32" },
+    "wisdom": { "book": "Psalm", "chapters": "58" },
+    "nt": { "book": "Luke", "chapters": "14" }
+  },
+  {
+    "id": "2026-03-05",
+    "month": "March",
+    "day": 5,
+    "dateDisplay": "Thursday, Mar 5",
+    "fullDate": "Thursday, March 5",
+    "ot": { "book": "Numbers", "chapters": "33-34" },
+    "wisdom": { "book": "Psalm", "chapters": "59" },
+    "nt": { "book": "Luke", "chapters": "15" }
+  },
+  {
+    "id": "2026-03-06",
+    "month": "March",
+    "day": 6,
+    "dateDisplay": "Friday, Mar 6",
+    "fullDate": "Friday, March 6",
+    "ot": { "book": "Numbers", "chapters": "35-36" },
+    "wisdom": { "book": "Psalm", "chapters": "60" },
+    "nt": { "book": "Luke", "chapters": "16" }
+  },
+  {
+    "id": "2026-03-07",
+    "month": "March",
+    "day": 7,
+    "dateDisplay": "Saturday, Mar 7",
+    "fullDate": "Saturday, March 7",
+    "ot": { "book": "Deuteronomy", "chapters": "1-2" },
+    "wisdom": { "book": "Psalm", "chapters": "61" },
+    "nt": { "book": "Luke", "chapters": "17" }
+  },
+  {
+    "id": "2026-03-08",
+    "month": "March",
+    "day": 8,
+    "dateDisplay": "Sunday, Mar 8",
+    "fullDate": "Sunday, March 8",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-03-09",
+    "month": "March",
+    "day": 9,
+    "dateDisplay": "Monday, Mar 9",
+    "fullDate": "Monday, March 9",
+    "ot": { "book": "Deuteronomy", "chapters": "5-6" },
+    "wisdom": { "book": "Proverbs", "chapters": "8" },
+    "nt": { "book": "Luke", "chapters": "19" }
+  },
+  {
+    "id": "2026-03-10",
+    "month": "March",
+    "day": 10,
+    "dateDisplay": "Tuesday, Mar 10",
+    "fullDate": "Tuesday, March 10",
+    "ot": { "book": "Deuteronomy", "chapters": "7-8" },
+    "wisdom": { "book": "Psalm", "chapters": "63" },
+    "nt": { "book": "Luke", "chapters": "20" }
+  },
+  {
+    "id": "2026-03-11",
+    "month": "March",
+    "day": 11,
+    "dateDisplay": "Wednesday, Mar 11",
+    "fullDate": "Wednesday, March 11",
+    "ot": { "book": "Deuteronomy", "chapters": "9-10" },
+    "wisdom": { "book": "Psalm", "chapters": "64" },
+    "nt": { "book": "Luke", "chapters": "21" }
+  },
+  {
+    "id": "2026-03-12",
+    "month": "March",
+    "day": 12,
+    "dateDisplay": "Thursday, Mar 12",
+    "fullDate": "Thursday, March 12",
+    "ot": { "book": "Deuteronomy", "chapters": "11-12" },
+    "wisdom": { "book": "Psalm", "chapters": "65" },
+    "nt": { "book": "Luke", "chapters": "22" }
+  },
+  {
+    "id": "2026-03-13",
+    "month": "March",
+    "day": 13,
+    "dateDisplay": "Friday, Mar 13",
+    "fullDate": "Friday, March 13",
+    "ot": { "book": "Deuteronomy", "chapters": "13-14" },
+    "wisdom": { "book": "Psalm", "chapters": "66" },
+    "nt": { "book": "Luke", "chapters": "23" }
+  },
+  {
+    "id": "2026-03-14",
+    "month": "March",
+    "day": 14,
+    "dateDisplay": "Saturday, Mar 14",
+    "fullDate": "Saturday, March 14",
+    "ot": { "book": "Deuteronomy", "chapters": "15-16" },
+    "wisdom": { "book": "Psalm", "chapters": "67" },
+    "nt": { "book": "Luke", "chapters": "24" }
+  },
+  {
+    "id": "2026-03-15",
+    "month": "March",
+    "day": 15,
+    "dateDisplay": "Sunday, Mar 15",
+    "fullDate": "Sunday, March 15",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-03-16",
+    "month": "March",
+    "day": 16,
+    "dateDisplay": "Monday, Mar 16",
+    "fullDate": "Monday, March 16",
+    "ot": { "book": "Deuteronomy", "chapters": "19-20" },
+    "wisdom": { "book": "Psalm", "chapters": "69" },
+    "nt": { "book": "John", "chapters": "2" }
+  },
+  {
+    "id": "2026-03-17",
+    "month": "March",
+    "day": 17,
+    "dateDisplay": "Tuesday, Mar 17",
+    "fullDate": "Tuesday, March 17",
+    "ot": { "book": "Deuteronomy", "chapters": "21-22" },
+    "wisdom": { "book": "Psalm", "chapters": "70" },
+    "nt": { "book": "John", "chapters": "3" }
+  },
+  {
+    "id": "2026-03-18",
+    "month": "March",
+    "day": 18,
+    "dateDisplay": "Wednesday, Mar 18",
+    "fullDate": "Wednesday, March 18",
+    "ot": { "book": "Deuteronomy", "chapters": "23-24" },
+    "wisdom": { "book": "Proverbs", "chapters": "9" },
+    "nt": { "book": "John", "chapters": "4" }
+  },
+  {
+    "id": "2026-03-19",
+    "month": "March",
+    "day": 19,
+    "dateDisplay": "Thursday, Mar 19",
+    "fullDate": "Thursday, March 19",
+    "ot": { "book": "Deuteronomy", "chapters": "25-27" },
+    "wisdom": { "book": "Psalm", "chapters": "71" },
+    "nt": { "book": "John", "chapters": "5" }
+  },
+  {
+    "id": "2026-03-20",
+    "month": "March",
+    "day": 20,
+    "dateDisplay": "Friday, Mar 20",
+    "fullDate": "Friday, March 20",
+    "ot": { "book": "Deuteronomy", "chapters": "28" },
+    "wisdom": { "book": "Psalm", "chapters": "72" },
+    "nt": { "book": "John", "chapters": "6" }
+  },
+  {
+    "id": "2026-03-21",
+    "month": "March",
+    "day": 21,
+    "dateDisplay": "Saturday, Mar 21",
+    "fullDate": "Saturday, March 21",
+    "ot": { "book": "Deuteronomy", "chapters": "29-30" },
+    "wisdom": { "book": "Psalm", "chapters": "73" },
+    "nt": { "book": "John", "chapters": "7" }
+  },
+  {
+    "id": "2026-03-22",
+    "month": "March",
+    "day": 22,
+    "dateDisplay": "Sunday, Mar 22",
+    "fullDate": "Sunday, March 22",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-03-23",
+    "month": "March",
+    "day": 23,
+    "dateDisplay": "Monday, Mar 23",
+    "fullDate": "Monday, March 23",
+    "ot": { "book": "Deuteronomy", "chapters": "33-34" },
+    "wisdom": { "book": "Psalm", "chapters": "75" },
+    "nt": { "book": "John", "chapters": "9" }
+  },
+  {
+    "id": "2026-03-24",
+    "month": "March",
+    "day": 24,
+    "dateDisplay": "Tuesday, Mar 24",
+    "fullDate": "Tuesday, March 24",
+    "ot": { "book": "Joshua", "chapters": "1-3" },
+    "wisdom": { "book": "Psalm", "chapters": "76" },
+    "nt": { "book": "John", "chapters": "10" }
+  },
+  {
+    "id": "2026-03-25",
+    "month": "March",
+    "day": 25,
+    "dateDisplay": "Wednesday, Mar 25",
+    "fullDate": "Wednesday, March 25",
+    "ot": { "book": "Joshua", "chapters": "4-6" },
+    "wisdom": { "book": "Psalm", "chapters": "77" },
+    "nt": { "book": "John", "chapters": "11" }
+  },
+  {
+    "id": "2026-03-26",
+    "month": "March",
+    "day": 26,
+    "dateDisplay": "Thursday, Mar 26",
+    "fullDate": "Thursday, March 26",
+    "ot": { "book": "Joshua", "chapters": "7-9" },
+    "wisdom": { "book": "Psalm", "chapters": "78" },
+    "nt": { "book": "John", "chapters": "12" }
+  },
+  {
+    "id": "2026-03-27",
+    "month": "March",
+    "day": 27,
+    "dateDisplay": "Friday, Mar 27",
+    "fullDate": "Friday, March 27",
+    "ot": { "book": "Joshua", "chapters": "10-12" },
+    "wisdom": { "book": "Proverbs", "chapters": "10" },
+    "nt": { "book": "John", "chapters": "13" }
+  },
+  {
+    "id": "2026-03-28",
+    "month": "March",
+    "day": 28,
+    "dateDisplay": "Saturday, Mar 28",
+    "fullDate": "Saturday, March 28",
+    "ot": { "book": "Joshua", "chapters": "13-15" },
+    "wisdom": { "book": "Psalm", "chapters": "79" },
+    "nt": { "book": "John", "chapters": "14" }
+  },
+  {
+    "id": "2026-03-29",
+    "month": "March",
+    "day": 29,
+    "dateDisplay": "Sunday, Mar 29",
+    "fullDate": "Sunday, March 29",
+    "ot": { "book": "The first of my WEEK", "chapters": "" },
+    "wisdom": { "book": "PAY / DAY", "chapters": "" },
+    "nt": { "book": "belong to Jesus", "chapters": "" },
+    "isSunday": true
+  },
+  {
+    "id": "2026-03-30",
+    "month": "March",
+    "day": 30,
+    "dateDisplay": "Monday, Mar 30",
+    "fullDate": "Monday, March 30",
+    "ot": { "book": "Joshua", "chapters": "19-21" },
+    "wisdom": { "book": "Psalm", "chapters": "81" },
+    "nt": { "book": "John", "chapters": "16" }
+  },
+  {
+    "id": "2026-03-31",
+    "month": "March",
+    "day": 31,
+    "dateDisplay": "Tuesday, Mar 31",
+    "fullDate": "Tuesday, March 31",
+    "ot": { "book": "Joshua", "chapters": "22-24" },
+    "wisdom": { "book": "Psalm", "chapters": "82" },
+    "nt": { "book": "John", "chapters": "17" }
+  }
+]
